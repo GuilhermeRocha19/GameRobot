@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        h2{
+            margin-bottom: 50px;
+        }
+        body{
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        h2{
+            color: white;
+        }
+        .randomizer{
+            background-image: url("boss.gif");
+            background-repeat: round;
+            background-size: auto;
+            
+            justify-content: space-between;
+            display:inline-block;
+            width: 100%;
+            align-items: center;
+            max-width: 800px;
+            margin-top: 50px;
+            padding-bottom:50px ;
+            padding-top: 50px;
+            border-radius: 20px;
+
+        }
+        .randomizer1{
+            display: inline-flex;
+            flex-direction: column;
+        }
+        input{
+            height: 35px;
+            text-align: center;
+            align-items: center;
+            border-radius: 8px;
+            font-size: 22px;
+            background-color: rgba(245, 245, 245, 0.486);
+            
+        }
+        textarea{
+            height: 90px;
+            background-color: rgba(245, 245, 245, 0.486);
+            text-align: center;
+            align-items: center;
+            border-radius: 8px;
+            font-size: 22px;
+        }
+        button{
+            padding: 15px;
+            margin-top: 12px;
+            margin-bottom: 12px;
+            border-radius: 12px;
+            font-size: 22px;
+            background-color: rgba(245, 245, 245, 0.486);
+            color: rgb(122, 0, 0);
+            font-weight: bold;
+        }
+        button:hover{
+            background-color: red;
+            color:black
+        }
+
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="randomizer" >
+        <h2>ESCOLHA SEU NÚMERO:</h2>
+        <div class="randomizer1" >
+            <input type="number" name="" id="number">
+            <button onclick="randomm()" >JOGAR</button>
+            <textarea name="" id="texto" cols="25" rows="center"></textarea>
+        </div>
+    </div>
+        <script>
+            
+            function randomm() { 
+            var x = Math.floor(Math.random()* 5 + 1);
+            var NA = document.getElementById("number").value
+            console.log(x)
+            
+            var text = ""
+            if(x == NA){
+                text =`PARABÉNS! Você venceu o robô, ele escolheu ${x} e você ${NA}. `
+            }else if(NA == 0) {
+                text = `NÚMERO INVÁLIDO, VOCÊ PERDEU!`
+            }else if (NA >= 6 ) {
+                text = `NÚMERO INVÁLIDO, VOCÊ PERDEU!`
+            }else if (NA != x){
+                text= `Você foi derrotado pelo robô, ele escolheu ${x} e você ${NA}.`
+            }
+
+            document.getElementById("texto").innerText = text
+
+
+
+            
+        
+            }
+            
+
+        </script>
+    
+</body>
+</html>
